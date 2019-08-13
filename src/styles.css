@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ngx-toastr/toastr.css";
+
+.font-btn
+{
+    border: none; /* Remove borders */
+    padding: 5px 5px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border: 1px solid blue;
+}
+
+.font-btn:hover {
+    background-color: aliceblue;
+  }
+
+  .search-box
+  {
+      position: absolute;
+      top: 8%;
+      right: 2%;
+  }

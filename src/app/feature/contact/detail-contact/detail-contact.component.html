@@ -1,0 +1,61 @@
+<div class="row search-box" *ngIf="contactList?.length > 0">
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" name="searchKeyWord" aria-describedby="searchKeyWord"
+        placeholder="Enter contact name" [(ngModel)]="searchKeyWord" autofocus>
+    </div>
+  </form>
+
+</div>
+<div class="container contact-list-container">
+  <div class="row">
+    <div class="card-container col-xs-12  col-sm-12 col-md-3 col-lg-3 pb-2"
+      *ngFor="let contact of contactList | filter:searchKeyWord">
+      <div class="card">
+        <img class="card-img-top  img-fluid" width="200px"
+          src="https://placeimg.com/250/150/people/{{contact.ContactId}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{contact.FirstName + " " + contact.LastName}}</h5>
+          <p class="card-text email"><i class="fa fa-envelope pr-1" aria-hidden="true"></i>{{contact.Email}}</p>
+          <p class="card-text"><i class="fa fa-phone pr-1" aria-hidden="true"></i>{{contact.PhoneNumber}}</p>
+          <span class="ml-auto float-right">
+            <span class="font-btn" [routerLink]="['/contact/edit', contact.ContactId]"><i class="fa fa-pencil"
+                aria-hidden="true"></i></span>
+            <span class="font-btn ml-2" [routerLink]="['/contact/remove', contact.ContactId]"><i class="fa fa-trash"
+                aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="card" *ngIf="contactList?.length <= 0 && isResultLoaded">
+      <div class="card-body">Looks like you dont have contacts. Please start adding contacts</div>    
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="!isResultLoaded">
+    <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-success" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-info" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="spinner-grow text-dark" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+</div>
+

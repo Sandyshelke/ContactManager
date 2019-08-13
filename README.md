@@ -1,27 +1,36 @@
 # ContactManager
+Title: CONTACT MANAGER
+[https://github.com/Sandyshelke/ContactManager]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+Introduction:
+   Application provides basic contact functionality.You can add, update, delete contact using this application. 
+   
+Highlights
+ - No browser specific validations are used to keep User Experience consistant across browsers.
+ 
+Support 
+  - Application can be used in IE11, Microsoft Edge, Google Chrome, Mozila Firefox. 
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Technologies Used:
+  - BackEnd:  C# Web API 2, Entity framework.
+  - Database: Sql server.
+  - Front End Angular 7, HTML5, CSS3, Bootstrap4HTML5, , Javascript, Jquery.
+  - depolyed on Azure
+  
+Hosting
+  - Application is hosted under ASE in Azure.
+  - You can access same application published at https://contactmanagerbe.azurewebsites.net
+  
+Installation
+  - Prerequisite:
+      1. node from https://nodejs.org/en/download/.
+      2. Editor : Visual studio code is preferred.
+  - Navigate to https://github.com/Sandyshelke/ContactManager to clone or download from git.
+  - once node is installed use npm to install angular cli
+     - npm install -g @angular/cli
+  - Go to node commnd prompt and navigate to root of project
+    (search for node on windows it will show node Node.js click to launch cmd).
+  - run npm install to install all the application dependant packages
+  - run ng build to build application node cmd.
+  - Go to any browser and navigate to http://localhost:4200/
+  - Application will be launced successfully.

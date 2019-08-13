@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="page-header pb-2 mt-4 mb-4 border-bottom ">
+      <i class="fa fa-user-plus" aria-hidden="true"></i>
+      New Contact Wizzard
+    </div>
+    <form [formGroup]="newContactForm" (ngSubmit)="CreateNewContact()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" placeholder="Enter first name" formControlName="FirstName">
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.FirstName.errors?.required && newContactForm.controls.FirstName.touched">
+          First name required.
+        </small>
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.FirstName.errors?.minlength && newContactForm.controls.FirstName.touched">
+          Enter atleast {{newContactForm.controls.FirstName.errors?.minlength?.requiredLength}} characters.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" class="form-control" placeholder="Enter last name"
+          formControlName="LastName">
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.LastName.errors?.required && newContactForm.controls.LastName.touched">
+          Last name required.
+        </small>
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.LastName.errors?.minlength && newContactForm.controls.LastName.touched">
+          Enter atleast {{newContactForm.controls.LastName.errors?.minlength?.requiredLength}} characters.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" name="Email" class="form-control" placeholder="Enter email id" formControlName="Email">
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.Email.errors?.required && newContactForm.controls.Email?.touched">
+          Email is required
+        </small>
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.Email.errors?.email && newContactForm.controls.Email?.touched">
+          Enter valid email address.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="PhoneNumber">Phone Number</label>
+        <input type="text" name="PhoneNumber" class="form-control" placeholder="Enter phone number" numberOnly="10"
+          formControlName="PhoneNumber">
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.PhoneNumber.errors?.required && newContactForm.controls.PhoneNumber?.touched">
+          Phone number is required
+        </small>
+        <small class="form-text text-danger"
+          *ngIf="newContactForm.controls.PhoneNumber.errors?.minlength && newContactForm.controls.PhoneNumber?.touched">
+          Phone number is invalid.
+        </small>
+        <small class="form-text text-muted" *ngIf="newContactForm.controls.PhoneNumber?.value.length > 0 && newContactForm.controls.PhoneNumber?.invalid">
+          Phone number should contain 10 digits.
+        </small>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="status" formControlName="Status">
+        <label class="form-check-label" for="status">Active</label>
+      </div>
+      <button type="button" class="btn btn-outline-primary mt-3 mr-2" routerLink="/contact/all">
+        <i class="fa fa-angle-double-left pr-1" aria-hidden="true"></i>Cancel</button>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="!newContactForm.valid">
+        <i class="fa fa-paper-plane pr-1" aria-hidden="true"></i> Save</button>
+    </form>
+  </div>
+</div>
